@@ -1,9 +1,10 @@
 node {
-    def myGradleContainer = docker.image('gradle:jdk8-alpine')
+//    def myGradleContainer = docker.image('gradle:jdk8-alpine')
+    def myGradleContainer = docker.image('anapsix/alpine-java:8_jdk')
     myGradleContainer.pull()
 
     stage('prep') {
-        git url: 'https://github.com/wardviaene/gs-gradle.git'
+        git url: 'https://github.com/annec22/gs-gradle.git'
     }
 
     stage('build') {
